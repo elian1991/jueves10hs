@@ -1,9 +1,99 @@
-<html> 
-	<head>
-		<title>Git Desarrollo colaborativo</title>
-	</head>
-	<body>
-		<h1>Curso Git</h1>
-		<p>Desarrollo colaborativo</p>
-	 </body>
-</html>	
+<!DOCTYPE html>
+<html lang = "es">
+	<cabeza>
+		<meta charset = "utf-8">
+		<título> Git Desarrollo colaborativo </título>
+		<link rel = " stylesheet " href = " styles / main.css ">
+	</cabeza>
+	<cuerpo>
+		<nav>
+			<Un href = "#"> GIT </a>
+			<button class = "button"> & equiv; </botón>
+			<ul class = "menu">
+				<Li> <un href = " # " título =" Inicio " > Inicio </a> </li>
+				<Li> <un href = " #about " título =" about " > about </una> </li>
+				<Li> <un href = " #contact " título =" contacto " > contacto </una> </li>
+			</ul>			
+		</nav>
+		<header  id = " header ">
+			<h1> Curso Git </h1>
+			<p> Desarrollo colaborativo </p>
+		</encabezado>
+		<sección>
+			<h2> Areas de GIT </h2>
+			<artículo>
+				<h3> Directorio de trabajo </h3>
+				<p>
+					Es la carpeta donde realizamos los cambios en nuestro proyecto,
+					en este lugar rara vez utilizaremos la consola y es el area 
+					donde se visualizan todos los cambios de los archivos.
+				</p>
+				<ul  class = " lista ">
+					<li> <strong> mkdir & lt; dir > </strong> crea un directorio con el nombre especificado. Por ejemplo para crear una carpeta deberiamos escribir <em> mkdir proyecto-git </em > </li>
+					<li> <fuerte> cd & lt; dir > </fuerte> cambia el directorio actual por el indicado. Para acceder a una carpeta, la ruta debe ser correcta como <em> cd proyecto-git </em > </li>
+					<li> <fuerte> rm & lt; dir > </fuerte> elimina el directorio o archivo indicado. Para eliminar un repositorio de git debemos utilizarlo de la siguiente manera <em > rm -rf .git </em > </li>
+					<li> <strong> git init </strong> inicia un repositorio de git o lo reinicia en caso que este ya existe. Debemos tener en cuenta que si utilizamos este comando las ubicaciones diferentes, cada ubicación se considera un repositorio en si. </li>
+				</ul>
+			</artículo>
+			<artículo>
+				<h3> Área de preparación (índice) </h3>
+				<p>
+					Es el area de control de cambios, donde se verifican las modificaciones
+					realizadas en los archivos del proyecto. Aqui se realizan los
+					<strong > instantáneas </strong> de codigo para luego ser confirmados.
+				</p >
+				<ul  class = " lista " >
+					<li >
+						<strong > git status </strong> verifica los cambios del DIRECTORIO DE TRABAJO y los compara con lo almacenado en el INDICE. Cada archivo posee un estado segun las acciones realizadas
+						<ul >
+							<li > <strong> untracked: </strong> no se esta haciendo seguimiento </li>
+							<li > <strong> seguido: </strong> se esta haciendo seguimiento </li >
+							<li > <fuerte> modificado: </fuerte> difiere con lo que se encuentra en el índice </li>
+							<li > <fuerte> comprometido: </fuerte> los cambios estan registrados </li>
+						</ul>
+					</li >
+					<li > <strong> git add & lt; file > </strong> agrega al INDEX los archivos especificados, también se pueden agregar directorios, siempre y cuando estos tengan archivos en su interior. Un uso rápido de este comando es <em> git add. </em> que agrega todos los archivos que se hayan modificado o creado en el directorio actual </li>
+					<li > <strong> git rm --cached & lt; file > </strong> Quita el archivo del área de seguimiento, pero lo mantiene en el DIRECTORIO DE TRABAJO. Este comando se utiliza cuando no existe una referencia para reestablecer el contenido. </li>
+					<li > <strong> git restore & lt; file > </strong> Quita el archivo del INDEX, y lo reestablece a como estaba en la ultima cabecera. </li>
+				</ul >
+			</artículo >
+			<artículo >
+				<h3 > Repositorio (local / remoto) </h3 >
+				<p >
+					Es el lugar donde se almacen las capturas en formato 
+					<strong > BLOB (Archivo de objeto binario) </strong> a las cuales podemos acceder
+					mediante el historial de cambios. Para generar estos archivos debemos emitir
+					un commit, el mismo valida los cambios y los almacena en la base de datos de GIT.
+				</p>
+				<ul  class = " lista ">
+					<li> <strong> git commit </strong> Abre el editor para generar una confirmación de cambios que será guardada en la base de datos del repositorio. Un uso rápido de este comando es <em> git commit -m "message" </em> que permite generar un commit con mensaje sin abrir el editor. </li>
+					<li>
+						<strong> git diff & lt; ref > </strong> Compara el DIRECTORIO DE TRABAJO con el compromiso al cual apunta la referencia especificada. una forma de comparar cambios realizados cuando no se realizo un commit es <em> git diff HEAD </em> , pero si queremos saber como difiere nuestra cabecera con respecto a otro commit podemo indicarlo de diferentes maneras.
+						<ul >
+							<li> <strong> referencia absoluta: </strong> especificamente hablando es el numero de HASH del commit que queremos comparar, por ejemplo <em> c215714 </em > </li>
+							<li > <fuerte> referencia relativa </fuerte> indica cuantos cometer atras esta nuestra referencia, por ejemplo <em> HEAD ^^ </em> indica dos ancestros antes de HEAD y <em> HEAD ~ 4 </em> indica 4 comete antes de HEAD </li>
+						</li> ul >
+					</li>
+					<li> <strong> git blame & lt; file > </strong> muestra las lineas de codigo del archivo especificado, colocando al principio en numero de commit, el nombre del autor, la fecha y hora en que se realizo el mismo, e incluso indica cuando los cambios todavia no fueron confirmados. </li>
+					<li> <strong> git remote </strong> lista los repositorios remotos que hayan sido agregados, si nuestro proyecto es un <em> clon </em> por defecto se agrega un remoto llamado <strong> origin </strong> , pero si fue creado, debemos hacerlo manualmente usando el comando <em> git remote add & lt; alias > & lt; URL > </em > </li>
+				</ul>
+			</artículo>
+		</sección>
+		<sección>
+			<h2> Apuntadores de GIT </h2>
+			<artículo>
+				<h3> CABEZA </h3>
+				<p>
+					Es un apuntador movil que nos permite navegar en el historial de cambios, normalmente apunta al ultimo commit de la rama donde nos encontremos y podemos cambiar su posicion para poder visualizar el proyecto a como se mana en algun punto de referencia (commit) utilizando el comando <strong> git checkout & lt; ref > </strong>
+				</p>
+			</artículo>
+			<artículo>
+				<h3> SUCURSAL </h3>
+				<p>
+					Las ramas son apuntadores dinamicos que siempre hacen referencia al ultimo commit dentro del historial. Podemos crear diferentes ramas y cada una apuntara a un commit particular, este puede ser el mismo o pueden ser totalmente diferentes. Si se quiere comparar, podrian interpretar como lineas de tiempo paralelas; las ramas son necesarias ya que permiten al apuntador HEAD navegar en el historial y volver al ultimo commit sin problemas.
+				</p >
+			</artículo>
+		</sección>
+		<script  src = " scripts / main.js " > </script>
+	</cuerpo >
+</html>
