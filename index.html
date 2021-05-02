@@ -32,7 +32,7 @@
 					<li><strong>mkdir &lt;dir></strong> crea un directorio con el nombre especificado. Por ejemplo para crear una carpeta deberiamos escribir <em>mkdir proyecto-git</em></li>
 					<li><strong>cd &lt;dir></strong> cambia el directorio actual por el indicado. Para acceder a una carpeta, la ruta debe ser correcta como <em>cd proyecto-git</em></li>
 					<li><strong>rm &lt;dir></strong> elimina el directorio o archivo indicado. Para eliminar un repositorio de git debemos utilizarlo de la siguiente manera <em>rm -rf .git</em></li>
-					<li><strong>git init</strong> inicia un repositorio de git o lo reinicia en caso que este ya exista. Debemos tener en cuenta que si utilizamos este comando el ubicaciones diferentes, cada ubicacion se considerara un repositorio en si.</li>
+					<li><strong>git init</strong> inicia un repositorio de git o lo reinicia en caso que este ya exista. Debemos tener en cuenta que si utilizamos este comando en ubicaciones diferentes, cada ubicacion se considerara un repositorio en si.</li>
 				</ul>
 			</article>
 			<article>
@@ -68,7 +68,7 @@
 				<ul class="list">
 					<li><strong>git commit</strong> Abre el editor para generar una confirmacion de cambios que sera guardada en la base de datos del repositorio. Un uso rapido de este comando es <em>git commit -m "message"</em> que permite generar un commit con mensaje sin abrir el editor.</li>
 					<li>
-						<strong>git diff &lt;ref></strong> Compara el WORKING DIRECTORY con el commit al cual apunta la referencia especificada. una forma de comparar cambios realizados cuando no se realizo un commit es <em>git diff HEAD</em>, pero si queremos saber como difiere nuestra cabecera con respecto a otro commit podemo indicarlo de diferentes maneras.
+						<strong>git diff &lt;ref></strong> Compara el WORKING DIRECTORY con el commit al cual apunta la referencia especificada. una forma de comparar cambios realizados cuando no se realizo un commit es <em>git diff HEAD</em>, pero si queremos saber como difiere nuestra cabecera con respecto a otro commit podemos indicarlo de diferentes maneras.
 						<ul>
 							<li><strong>referencia absoluta: </strong> especificamente hablando es el numero de HASH del commit que queremos comparar, por ejemplo <em>c215714</em></li>
 							<li><strong>referencia relativa</strong> indica cuantos commit atras esta nuestra referencia, por ejemplo <em>HEAD^^</em> indica dos ancestros antes de HEAD y <em>HEAD~4</em> indica 4 commits antes de HEAD</li>
